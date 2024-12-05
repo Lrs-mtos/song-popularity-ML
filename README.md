@@ -39,10 +39,19 @@ This repository contains a ML project about predicting song popularity on Spotif
    - Busque exemplos semelhantes já resolvidos e ferramentas reutilizáveis.
 
 9. **Tem expertise humana disponível?**:
-   - Identifique se há especialistas internos ou externos que podem ajudar.
+   - Não, no grupo não existe ninguem que possua conhecimento suficiente referente a musica que possa
+     ser considerado expertise, juntamente na área de ML. 
 
 10. **Como você resolveria o problema manualmente?**:
-    - Pense em como o problema seria abordado sem automação para entender melhor a lógica por trás.
+    ### 1. Análise Exploratória de Dados
+   O primeiro passo seria buscar possíveis correlações entre os dados para identificar padrões ou tendências. Isso ajudaria a entender como as variáveis se relacionam e     se há alguma indicação clara de influência na popularidade das músicas.
+
+   ### 2. Uso de Métodos Estatísticos para Classificação
+   Seria interessante utilizar métodos de classificação, seja por estatísticas ou outros métodos de aprendizado de máquina, para observar quais variáveis influenciam de     fato a popularidade das músicas. Essa análise ajudaria a identificar quais fatores são mais relevantes para a predição.
+   
+   ### 3. Consulta com Especialistas de Domínio
+   Com as informações e padrões obtidos, é essencial consultar pessoas com domínio sobre aspectos como ritmo, energia e gênero musical. Esses especialistas podem            fornecer insights sobre como esses fatores podem influenciar positiva ou negativamente a compreensão e o sucesso de uma música.
+
 
 11. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
     - Liste todas as hipóteses assumidas sobre os dados ou o problema.

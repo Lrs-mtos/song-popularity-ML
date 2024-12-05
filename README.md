@@ -80,6 +80,13 @@ This repository contains a ML project about predicting song popularity on Spotif
    O kaggle te disponibiliza o Dataset para download e possui uma versão em csv que ja é em formato válido para trabalhar
    com os dados,usando o seguinte código, obtemos o arquivo csv e realizamos um shape para visualizar o tamanho do Dataflame:
    ```python
+      import numpy as np # linear algebra
+      import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+      from sklearn.model_selection import train_test_split
+      from sklearn.preprocessing import StandardScaler, OneHotEncoder
+      from sklearn.compose import ColumnTransformer
+      from sklearn.pipeline import Pipeline
+   
       def returnDataFLame(file_path):
           try:
               df = pd.read_csv(file_path)

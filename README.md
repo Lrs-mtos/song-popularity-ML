@@ -76,12 +76,36 @@ This repository contains a ML project about predicting song popularity on Spotif
    - Realize o download, coleta ou integração de dados.
 
 8. **Converta os dados em um formato que você possa manipular com facilidade (sem alterar os próprios dados)**:
-   - Normalize ou transforme para CSV, JSON, SQL, entre outros.
+   O kaggle te disponibiliza o Dataset para download e possui uma versão em csv que ja é im formato valido para trabalhar
+   com os dados,usando o seguinte codigo, obtenho o arquivo csv e realizo um shape para ver o tamanho do Dataflame:
+   ```python
+      def returnDataFLame(file_path):
+          try:
+              df = pd.read_csv(file_path)
+              return df
+          except Exception as e:
+              print(f"Erro ao ler o arquivo: {e}")
+              return None
+      
+      # Ler o DataFrame
+      df = returnDataFLame('/kaggle/input/30000-spotify-songs/spotify_songs.csv')
+      
+      # Verificar se o DataFrame foi lido com sucesso
+      if df is None or df.empty:
+          print("Erro: o arquivo não é CSV ou está vazio")
+      else:
+          print(df.head())  # Exibir as primeiras linhas do DataFrame para verificar
+      print(df.shape)
 
-9. **Assegure que as informações confidenciais sejam excluídas ou protegidas**:
-   - Aplique anonimização ou outras práticas de segurança.
+   
 
-10. **Verifique o tamanho e o tipo de dados**:
+10. **Assegure que as informações confidenciais sejam excluídas ou protegidas**:
+   Levando em consideração a finalidade desse modelo, chegamos a conclusão de que nenhum desses dados deva ser considerado como
+   uma informação confidencial, por outro lado como se trata de uma musica que não foi lançada, e conterá informações como: nome
+   do album e nome da música não sei se isso seria relevante em termos de vazar dados, acho que seria um sim se tivessemos trabalhando
+   diretamente com o audio da música.
+
+11. **Verifique o tamanho e o tipo de dados**:
 
     | **Variável**                   | **Descrição**                                            | **Tipo de Dado**           |
     |--------------------------------|----------------------------------------------------------|----------------------------|

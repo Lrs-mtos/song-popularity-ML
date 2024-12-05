@@ -89,16 +89,26 @@ This repository contains a ML project about predicting song popularity on Spotif
    - De acordo com a descrição do dataset, ele possui um tamanho de 7,98 MB. Portanto, estimamos que esse é o espaço necessário para armazenar os dados completos, que incluem as informações detalhadas sobre as 30.000 músicas do Spotify.
 
 4. **Verifique as obrigações legais e obtenha autorização, se necessário**:
-   - Confirme o cumprimento de regulamentações de privacidade (ex.: LGPD, GDPR).
+   
+   No momento em que os dados são acessados, é possível encontrar um [link](https://opendatacommons.org/licenses/dbcl/1-0/) chamado "License". Nele é possível encontrar um documento detalhado sobre os direitos que você tem sobre o conteúdo do banco de dados, como usar, modificar, distribuir, sublicenciar e vender o conteúdo, e os termos sob os quais você pode usá-lo, incluindo o cumprimento da ODbL e a isenção de responsabilidade do Licenciante.
+
+Em termos simples:
+
+>Você tem ampla liberdade para usar o conteúdo, inclusive para fins comerciais.
+>O Licenciante não garante que os dados estão corretos ou sem erros, e não será responsável por quaisquer danos resultantes do uso dos dados.
+>O Licenciante não reivindica direitos autorais sobre dados factuais (como números ou observações).
+>Portanto, se você estiver usando este conteúdo, deve estar ciente de que pode usar livremente os dados, mas também deve respeitar as condições da ODbL e entender que o Licenciante não se responsabiliza por eventuais problemas.
+
 
 5. **Obtenha permissões de acesso**:
-   - Garanta as autorizações adequadas para acessar os dados.
+
+   De acordo com os dados da licença, não é necessário nenhum tipo de permissão de acesso específica.
 
 6. **Crie um workspace (com espaço de armazenamento suficiente)**:
-   - Prepare o ambiente para análise (ex.: pastas, repositórios, etc.).
+   - Foi preparado o ambiente para análise.
 
 7. **Obtenha os dados**:
-   - Realize o download, coleta ou integração de dados.
+   - Foi realizado o download dos dados na [plataforma Kaggle](https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs?resource=download).
 
 8. **Converta os dados em um formato que você possa manipular com facilidade (sem alterar os próprios dados)**:
    
@@ -112,7 +122,7 @@ This repository contains a ML project about predicting song popularity on Spotif
       from sklearn.compose import ColumnTransformer
       from sklearn.pipeline import Pipeline
    
-      def returnDataFLame(file_path):
+      def returnDataFrame(file_path):
           try:
               df = pd.read_csv(file_path)
               return df

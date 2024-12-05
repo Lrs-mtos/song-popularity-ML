@@ -104,11 +104,11 @@ This repository contains a ML project about predicting song popularity on Spotif
    
 
 10. **Assegure que as informações confidenciais sejam excluídas ou protegidas**:
-    
-   Levando em consideração a finalidade desse modelo, chegamos a conclusão de que nenhum desses dados deva ser considerado como
-   uma informação confidencial, por outro lado como se trata de uma musica que não foi lançada, e conterá informações como: nome
-   do album e nome da música não sei se isso seria relevante em termos de vazar dados, acho que seria um sim se tivessemos trabalhando
-   diretamente com o audio da música.
+
+    Levando em consideração a finalidade desse modelo, chegamos a conclusão de que nenhum desses dados deva ser considerado como
+    uma informação confidencial, por outro lado como se trata de uma musica que não foi lançada, e conterá informações como: nome
+    do album e nome da música não sei se isso seria relevante em termos de vazar dados, acho que seria um sim se tivessemos trabalhando
+    diretamente com o audio da música.
 
 12. **Verifique o tamanho e o tipo de dados**:
 

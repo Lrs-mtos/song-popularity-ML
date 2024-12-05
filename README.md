@@ -94,10 +94,10 @@ This repository contains a ML project about predicting song popularity on Spotif
       if df is None or df.empty:
           print("Erro: o arquivo não é CSV ou está vazio")
       else:
-          print(df.shape)
+          print(df.shape)´´´
    **Resultado da execução:**
    ```css
-      (32833, 23)
+      (32833, 23)´´´
    
 
 10. **Assegure que as informações confidenciais sejam excluídas ou protegidas**:

@@ -8,18 +8,23 @@ This repository contains a ML project about predicting song popularity on Spotif
 
 ### Definição do Problema:
 1. **Defina o objetivo em termos de negócios**:
-   - Especifique o que precisa ser alcançado para resolver um problema ou aproveitar uma oportunidade.
+   - O objetivo do projeto é prever a tendência de uma música se tornar popular no Spotify, ajudando produtores e artistas a tomarem decisões ponderadas sobre lançamentos e campanhas de marketing. O sucesso será medido pela precisão das previsões e pelo impacto na identificação de músicas com alto potencial de popularidade.
 
 2. **Como sua solução será usada?**:
-   - Descreva quem utilizará a solução e para qual finalidade.
+   - A solução será usada por produtores musicais, artistas e equipes de marketing para identificar músicas com potencial de popularidade antes do lançamento. O modelo poderá ser integrado a uma plataforma de análise de dados onde os usuários inserem características das músicas (como nome da música, duração, artista etc), e o sistema fornece uma previsão (em porcentagem) sobre a probabilidade de sucesso. Isso permitirá decisões mais informadas e assertivas em campanhas de lançamento e divulgação.
 
 3. **Quais são as soluções/alternativas atuais (caso existam)?**:
-   - Documente as práticas ou ferramentas existentes e seus pontos fracos.
+   - As soluções atuais incluem análises manuais de tendências por especialistas da indústria musical e ferramentas de análise de dados fornecidas pelo próprio Spotify, como o Spotify for Artists, que oferece informações sobre o desempenho das músicas após o lançamento. No entanto, essas soluções têm limitações:
+      - As análises manuais dependem de experiência pessoal dos analistas e podem ser subjetivas.
+      - As ferramentas do Spotify fornecem insights baseados em dados históricos, mas não oferecem previsões antes do lançamento de uma música.
+   - Essas ferramentas atuais diferem do objetivo principal do nosso modelo, que busca superar essas limitações ao prever, de forma automatizada, a tendência de sucesso de uma música com base em suas características antes do lançamento, e não após.
 
 4. **Como você deve abordar este problema?**:
-   - Defina se a abordagem será:
-     - Aprendizado supervisionado ou não supervisionado.
-     - Processamento online ou offline.
+   - A abordagem adotada será a de aprendizado supervisionado, uma vez que contamos com dados rotulados, ou seja, informações sobre músicas que já se tornaram populares (ou não) no Spotify. O objetivo é treinar o modelo para prever o potencial de sucesso de uma nova música com base nessas características. A partir desses exemplos rotulados, o modelo aprenderá a identificar padrões e fazer previsões.
+   - Utilizaremos uma abordagem de processamento offline, pois o modelo de aprendizado supervisionado será treinado com dados históricos sobre músicas e sua popularidade, sem a necessidade de atualizações em tempo real.
+  
+
+   (OBS: Será online ou offline?)
 
 5. **Como o desempenho deve ser medido?**:
    - Estabeleça métricas claras (ex.: precisão, recall, RMSE, etc.).

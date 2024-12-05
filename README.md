@@ -43,7 +43,7 @@ This repository contains a ML project about predicting song popularity on Spotif
      ser considerado expertise, juntamente na área de ML. 
 
 10. **Como você resolveria o problema manualmente?**:
-    ### 1. Análise Exploratória de Dados
+    *** 1. Análise Exploratória de Dados***
     O primeiro passo seria buscar possíveis correlações entre os dados para identificar padrões ou tendências. Isso ajudaria a entender como as variáveis se relacionam e     se há alguma indicação clara de influência na popularidade das músicas.
 
     ### 2. Uso de Métodos Estatísticos para Classificação

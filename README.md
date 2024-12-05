@@ -82,33 +82,32 @@ This repository contains a ML project about predicting song popularity on Spotif
    - Aplique anonimização ou outras práticas de segurança.
 
 10. **Verifique o tamanho e o tipo de dados**:
-| **Variável**                   | **Descrição**                                            | **Tipo de Dado**           |
-|--------------------------------|----------------------------------------------------------|----------------------------|
-| **track_id**                   | ID único da música                                       | Categórico (nominal)       |
-| **track_name**                 | Nome da música                                           | Textual                    |
-| **track_artist**               | Nome do artista                                          | Categórico (nominal)       |
-| **track_popularity**           | Popularidade da música (0 a 100)                         | Numérico (contínuo)        |
-| **track_album_id**             | ID único do álbum                                        | Categórico (nominal)       |
-| **track_album_name**           | Nome do álbum                                            | Textual                    |
-| **track_album_release_date**   | Data de lançamento do álbum                              | Temporal                   |
-| **playlist_name**              | Nome da playlist                                         | Textual                    |
-| **playlist_id**                | ID da playlist                                           | Categórico (nominal)       |
-| **playlist_genre**             | Gênero da playlist                                       | Categórico (nominal)       |
-| **playlist_subgenre**          | Subgênero da playlist                                    | Categórico (nominal)       |
-| **danceability**               | Adequação da música para dançar (0.0 a 1.0)              | Numérico (contínuo)        |
-| **energy**                     | Energia da música (0.0 a 1.0)                            | Numérico (contínuo)        |
-| **key**                        | Tom principal da música (0 a 11; -1 para indeterminado)  | Categórico (ordinal)       |
-| **loudness**                   | Volume médio da música em decibéis                       | Numérico (contínuo)        |
-| **mode**                       | Modo da música (0 = menor, 1 = maior)                    | Categórico (binário)       |
-| **speechiness**                | Presença de palavras faladas (0.0 a 1.0)                 | Numérico (contínuo)        |
-| **acousticness**               | Confiança de ser acústica (0.0 a 1.0)                    | Numérico (contínuo)        |
-| **instrumentalness**           | Confiança de ser instrumental (0.0 a 1.0)                | Numérico (contínuo)        |
-| **liveness**                   | Probabilidade de ser gravada ao vivo (0.0 a 1.0)         | Numérico (contínuo)        |
-| **valence**                    | Positividade musical (0.0 a 1.0)                         | Numérico (contínuo)        |
-| **tempo**                      | Tempo médio em batidas por minuto (BPM)                  | Numérico (contínuo)        |
-| **duration_ms**                | Duração da música em milissegundos                       | Numérico (contínuo)        |
 
-
+    | **Variável**                   | **Descrição**                                            | **Tipo de Dado**           |
+    |--------------------------------|----------------------------------------------------------|----------------------------|
+    | **track_id**                   | ID único da música                                       | Categórico (nominal)       |
+    | **track_name**                 | Nome da música                                           | Textual                    |
+    | **track_artist**               | Nome do artista                                          | Categórico (nominal)       |
+    | **track_popularity**           | Popularidade da música (0 a 100)                         | Numérico (contínuo)        |
+    | **track_album_id**             | ID único do álbum                                        | Categórico (nominal)       |
+    | **track_album_name**           | Nome do álbum                                            | Textual                    |
+    | **track_album_release_date**   | Data de lançamento do álbum                              | Temporal                   |
+    | **playlist_name**              | Nome da playlist                                         | Textual                    |
+    | **playlist_id**                | ID da playlist                                           | Categórico (nominal)       |
+    | **playlist_genre**             | Gênero da playlist                                       | Categórico (nominal)       |
+    | **playlist_subgenre**          | Subgênero da playlist                                    | Categórico (nominal)       |
+    | **danceability**               | Adequação da música para dançar (0.0 a 1.0)              | Numérico (contínuo)        |
+    | **energy**                     | Energia da música (0.0 a 1.0)                            | Numérico (contínuo)        |
+    | **key**                        | Tom principal da música (0 a 11; -1 para indeterminado)  | Categórico (ordinal)       |
+    | **loudness**                   | Volume médio da música em decibéis                       | Numérico (contínuo)        |
+    | **mode**                       | Modo da música (0 = menor, 1 = maior)                    | Categórico (binário)       |
+    | **speechiness**                | Presença de palavras faladas (0.0 a 1.0)                 | Numérico (contínuo)        |
+    | **acousticness**               | Confiança de ser acústica (0.0 a 1.0)                    | Numérico (contínuo)        |
+    | **instrumentalness**           | Confiança de ser instrumental (0.0 a 1.0)                | Numérico (contínuo)        |
+    | **liveness**                   | Probabilidade de ser gravada ao vivo (0.0 a 1.0)         | Numérico (contínuo)        |
+    | **valence**                    | Positividade musical (0.0 a 1.0)                         | Numérico (contínuo)        |
+    | **tempo**                      | Tempo médio em batidas por minuto (BPM)                  | Numérico (contínuo)        |
+    | **duration_ms**                | Duração da música em milissegundos                       | Numérico (contínuo)        |
 
 12. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:
     - Separe os dados de teste para validação posterior, evitando data snooping.

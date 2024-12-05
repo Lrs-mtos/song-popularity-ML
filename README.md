@@ -82,7 +82,7 @@ This repository contains a ML project about predicting song popularity on Spotif
    - Aplique anonimização ou outras práticas de segurança.
 
 10. **Verifique o tamanho e o tipo de dados**:
-11. | **Variável**                   | **Descrição**                                                                                               | **Tipo de Dado**           |
+| **Variável**                   | **Descrição**                                                                                               | **Tipo de Dado**           |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------|
 | **track_id**                   | ID único da música                                                                                        | Categórico (nominal)       |
 | **track_name**                 | Nome da música                                                                                           | Textual                   |
@@ -107,6 +107,7 @@ This repository contains a ML project about predicting song popularity on Spotif
 | **valence**                    | Positividade musical (0.0 a 1.0)                                                                          | Numérico (contínuo)        |
 | **tempo**                      | Tempo médio em batidas por minuto (BPM)                                                                   | Numérico (contínuo)        |
 | **duration_ms**                | Duração da música em milissegundos                                                                       | Numérico (contínuo)        |
+
 
 
 12. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:

@@ -103,12 +103,13 @@ This repository contains a ML project about predicting song popularity on Spotif
    
 
 10. **Assegure que as informações confidenciais sejam excluídas ou protegidas**:
+    
    Levando em consideração a finalidade desse modelo, chegamos a conclusão de que nenhum desses dados deva ser considerado como
    uma informação confidencial, por outro lado como se trata de uma musica que não foi lançada, e conterá informações como: nome
    do album e nome da música não sei se isso seria relevante em termos de vazar dados, acho que seria um sim se tivessemos trabalhando
    diretamente com o audio da música.
 
-11. **Verifique o tamanho e o tipo de dados**:
+12. **Verifique o tamanho e o tipo de dados**:
 
     | **Variável**                   | **Descrição**                                            | **Tipo de Dado**           |
     |--------------------------------|----------------------------------------------------------|----------------------------|
@@ -131,6 +132,6 @@ This repository contains a ML project about predicting song popularity on Spotif
     | **tempo**                      | Tempo médio em batidas por minuto (BPM)                  | Numérico (contínuo)        |
     | **duration_ms**                | Duração da música em milissegundos                       | Numérico (contínuo)        |
 
-12. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:
+13. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:
     - Separe os dados de teste para validação posterior, evitando data snooping.
 

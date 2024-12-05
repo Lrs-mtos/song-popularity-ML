@@ -134,5 +134,34 @@ This repository contains a ML project about predicting song popularity on Spotif
     | **duration_ms**                | Duração da música em milissegundos                       | Numérico (contínuo)        |
 
 13. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:
-    - Separe os dados de teste para validação posterior, evitando data snooping.
+    ```python
+      # Separando as variáveis independentes e a dependente, queremos prever a popularidade
+      # de uma música, logo nossa variável de predição é a track_popularity
+      X = df.drop(columns=['track_popularity'])
+      y = df['track_popularity']
+      
+      # Tratando valores nulos do nosso df, se tiver algum valor nulo, removemos a linha referente
+      X = X.dropna()
+      y = y[X.index]
+      
+      # Identificar variáveis numéricas e categóricas
+      numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
+      categorical_features = X.select_dtypes(include=['object']).columns
+      
+      # Definindo transformações para variáveis numéricas e categóricas
+      numeric_transformer = StandardScaler()
+      categorical_transformer = OneHotEncoder(drop='first')
+      
+      # Criando um pré-processador usando ColumnTransformer
+      preprocessor = ColumnTransformer(
+          transformers=[
+              ('num', numeric_transformer, numeric_features),
+              ('cat', categorical_transformer, categorical_features)
+          ]
+      )
+      
+      # 70% para treino e 30% para teste
+      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+      print(f"Tamanho do conjunto de treino: {X_train.shape[0]}")
+      print(f"Tamanho do conjunto de teste: {X_test.shape[0]}")
 

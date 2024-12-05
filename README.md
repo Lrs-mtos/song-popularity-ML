@@ -39,15 +39,40 @@ This repository contains a ML project about predicting song popularity on Spotif
    - Busque exemplos semelhantes já resolvidos e ferramentas reutilizáveis.
 
 9. **Tem expertise humana disponível?**:
-   - Identifique se há especialistas internos ou externos que podem ajudar.
+   - Não, no grupo não existe ninguem que possua conhecimento suficiente referente a musica que possa
+     ser considerado expertise, juntamente na área de ML. 
 
 10. **Como você resolveria o problema manualmente?**:
-    - Pense em como o problema seria abordado sem automação para entender melhor a lógica por trás.
+    #### 1. Análise Exploratória de Dados
+    O primeiro passo seria buscar possíveis correlações entre os dados para identificar padrões ou tendências. Isso ajudaria a entender como as variáveis se relacionam e     se há alguma indicação clara de influência na popularidade das músicas.
 
-11. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
-    - Liste todas as hipóteses assumidas sobre os dados ou o problema.
+    #### 2. Uso de Métodos Estatísticos para Classificação
+    Seria interessante utilizar métodos de classificação, seja por estatísticas ou outros métodos de aprendizado de máquina, para observar quais variáveis influenciam de     fato a popularidade das músicas. Essa análise ajudaria a identificar quais fatores são mais relevantes para a predição.
+   
+    #### 3. Consulta com Especialistas de Domínio
+    Com as informações e padrões obtidos, é essencial consultar pessoas com domínio sobre aspectos como ritmo, energia e gênero musical. Esses especialistas podem            fornecer insights sobre como esses fatores podem influenciar positiva ou negativamente a compreensão e o sucesso de uma música.
 
-12. **Verifique essas suposições, se possível**:
+    #### 4. Levantamento e validação de hipoteses
+    De acordo com todas as informações reunidas acerca dos dados e do que foi discutido com especialistas, levantaria algumas hipoteses e buscaria uma forma de 
+    validalas.  
+
+12. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
+    #### 1. Variável `track_popularity` como Métrica de Sucesso
+    A variável `track_popularity` é considerada uma boa métrica para determinar o sucesso de uma música, assumindo que ela reflete com precisão a popularidade e 
+    aceitação de uma faixa pelo público. Nesse projeto, assume-se que essa métrica é o melhor indicador de sucesso, dado que mede diretamente a recepção e o alcance da 
+    música.
+   
+    #### 2. Relevância das Variáveis Numéricas e Categóricas
+    As variáveis numéricas e categóricas selecionadas são consideradas corretas e suficientes para a predição.
+   
+    #### 3. Limpeza e Qualidade dos Dados
+    Presume-se que no dataflame os dados estão distribuidos de forma correta e não possuem nenhum tipo de valores extremos que possam atrapalhar na predição do modelo.
+   
+    #### 4. Representatividade dos Dados
+    Os dados coletados são suficientes para generalizar para o cenário da música popular, assumindo que eles cobrem uma variedade de gêneros, artistas e 
+    características de faixas típicas de sucessos na indústria.
+
+13. **Verifique essas suposições, se possível**:
     - Teste e valide cada hipótese antes de seguir adiante.
 
 ---
@@ -80,6 +105,13 @@ This repository contains a ML project about predicting song popularity on Spotif
    O kaggle te disponibiliza o Dataset para download e possui uma versão em csv que ja é em formato válido para trabalhar
    com os dados,usando o seguinte código, obtemos o arquivo csv e realizamos um shape para visualizar o tamanho do Dataflame:
    ```python
+      import numpy as np # linear algebra
+      import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+      from sklearn.model_selection import train_test_split
+      from sklearn.preprocessing import StandardScaler, OneHotEncoder
+      from sklearn.compose import ColumnTransformer
+      from sklearn.pipeline import Pipeline
+   
       def returnDataFLame(file_path):
           try:
               df = pd.read_csv(file_path)
@@ -134,5 +166,34 @@ This repository contains a ML project about predicting song popularity on Spotif
     | **duration_ms**                | Duração da música em milissegundos                       | Numérico (contínuo)        |
 
 13. **Amostre um conjunto de teste, deixe-o de lado e nem coloque a mão nele**:
-    - Separe os dados de teste para validação posterior, evitando data snooping.
+    ```python
+      # Separando as variáveis independentes e a dependente, queremos prever a popularidade
+      # de uma música, logo nossa variável de predição é a track_popularity
+      X = df.drop(columns=['track_popularity'])
+      y = df['track_popularity']
+      
+      # Tratando valores nulos do nosso df, se tiver algum valor nulo, removemos a linha referente
+      X = X.dropna()
+      y = y[X.index]
+      
+      # Identificar variáveis numéricas e categóricas
+      numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
+      categorical_features = X.select_dtypes(include=['object']).columns
+      
+      # Definindo transformações para variáveis numéricas e categóricas
+      numeric_transformer = StandardScaler()
+      categorical_transformer = OneHotEncoder(drop='first')
+      
+      # Criando um pré-processador usando ColumnTransformer
+      preprocessor = ColumnTransformer(
+          transformers=[
+              ('num', numeric_transformer, numeric_features),
+              ('cat', categorical_transformer, categorical_features)
+          ]
+      )
+      
+      # 70% para treino e 30% para teste
+      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+      print(f"Tamanho do conjunto de treino: {X_train.shape[0]}")
+      print(f"Tamanho do conjunto de teste: {X_test.shape[0]}")
 

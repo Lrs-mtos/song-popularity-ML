@@ -52,8 +52,11 @@ This repository contains a ML project about predicting song popularity on Spotif
     #### 3. Consulta com Especialistas de Domínio
     Com as informações e padrões obtidos, é essencial consultar pessoas com domínio sobre aspectos como ritmo, energia e gênero musical. Esses especialistas podem            fornecer insights sobre como esses fatores podem influenciar positiva ou negativamente a compreensão e o sucesso de uma música.
 
+    #### 4. Levantamento e validação de hipoteses
+    De acordo com todas as informações reunidas acerca dos dados e do que foi discutido com especialistas, levantaria algumas hipoteses e buscaria uma forma de 
+    validalas.  
 
-11. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
+12. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
     #### 1. Variável `track_popularity` como Métrica de Sucesso
     A variável `track_popularity` é considerada uma boa métrica para determinar o sucesso de uma música, assumindo que ela reflete com precisão a popularidade e 
     aceitação de uma faixa pelo público. Nesse projeto, assume-se que essa métrica é o melhor indicador de sucesso, dado que mede diretamente a recepção e o alcance da 
@@ -69,7 +72,7 @@ This repository contains a ML project about predicting song popularity on Spotif
     Os dados coletados são suficientes para generalizar para o cenário da música popular, assumindo que eles cobrem uma variedade de gêneros, artistas e 
     características de faixas típicas de sucessos na indústria.
 
-12. **Verifique essas suposições, se possível**:
+13. **Verifique essas suposições, se possível**:
     - Teste e valide cada hipótese antes de seguir adiante.
 
 ---

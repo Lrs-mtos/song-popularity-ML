@@ -77,8 +77,8 @@ This repository contains a ML project about predicting song popularity on Spotif
 
 8. **Converta os dados em um formato que você possa manipular com facilidade (sem alterar os próprios dados)**:
    
-   O kaggle te disponibiliza o Dataset para download e possui uma versão em csv que ja é im formato valido para trabalhar
-   com os dados,usando o seguinte codigo, obtenho o arquivo csv e realizo um shape para ver o tamanho do Dataflame:
+   O kaggle te disponibiliza o Dataset para download e possui uma versão em csv que ja é em formato válido para trabalhar
+   com os dados,usando o seguinte código, obtemos o arquivo csv e realizamos um shape para visualizar o tamanho do Dataflame:
    ```python
       def returnDataFLame(file_path):
           try:

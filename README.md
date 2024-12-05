@@ -54,7 +54,24 @@ This repository contains a ML project about predicting song popularity on Spotif
 
 
 11. **Enumere as suposições que você (ou outras pessoas) fizeram até agora**:
-    - Liste todas as hipóteses assumidas sobre os dados ou o problema.
+    ### 1. Variável `track_popularity` como Métrica de Sucesso
+    A variável `track_popularity` é considerada uma boa métrica para determinar o sucesso de uma música, assumindo que ela reflete com precisão a popularidade e 
+    aceitação de uma faixa pelo público. Nesse projeto, assume-se que essa métrica é o melhor indicador de sucesso, dado que mede diretamente a recepção e o alcance da 
+    música.
+   
+   ### 2. Relevância das Variáveis Numéricas e Categóricas
+   As variáveis numéricas e categóricas selecionadas são consideradas corretas e suficientes para a predição. Supõe-se que todos os atributos incluídos no modelo têm    
+   relevância para prever a popularidade da música. A seleção de variáveis foi feita levando em conta a importância potencial de fatores como ritmo, energia e gênero, 
+   que podem influenciar o sucesso da faixa.
+   
+   ### 3. Limpeza e Qualidade dos Dados
+   Presume-se que os dados foram limpos adequadamente e que não contêm valores extremos que possam afetar de forma errada o modelo. A limpeza de dados é uma etapa 
+   essencial para garantir que o modelo receba informações precisas e confiáveis, minimizando o risco de vieses ou distorções na análise.
+   
+   ### 4. Representatividade dos Dados
+   A distribuição dos dados é assumida como representativa do que se encontra em um contexto real da indústria musical. Os dados coletados são considerados suficientes 
+   para generalizar para o cenário da música popular, assumindo que eles cobrem uma variedade de gêneros, artistas e características de faixas típicas de sucessos na 
+   indústria.
 
 12. **Verifique essas suposições, se possível**:
     - Teste e valide cada hipótese antes de seguir adiante.

@@ -55,13 +55,13 @@ This repository contains a ML project about predicting song popularity on Spotif
 ## **Etapa 2: Obter os Dados**
 
 1. **Liste os dados de que você precisa e de quanto precisa**:
-   - Relacione variáveis, tipos de dados e volumes necessários.
+   - Vamos utilizar todos os dados disponíveis no dataset, exceto track_id, track_album_id, playlist_name, playlist_id e playlist_subgenre. Esses dados não são relevantes para a previsão de popularidade da música, pois não influenciam diretamente as características musicais ou o desempenho da faixa em plataformas como o Spotify. As variáveis focadas serão aquelas que descrevem a música em termos de gênero, duração e outros atributos que impactam sua aceitação e sucesso.
 
 2. **Encontre e documente onde você pode obter esses dados**:
-   - Registre as fontes (bancos de dados, APIs, planilhas, etc.).
+   - Utilizaremos o dataset disponível no Kaggle, através do link: https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs/data. Este conjunto de dados contém informações detalhadas sobre 30.000 músicas do Spotify, incluindo características relevantes para nossa análise. Ele será a fonte principal para treinar e testar o modelo de previsão de popularidade.
 
 3. **Verifique quanto espaço esses dados ocuparão**:
-   - Estime o espaço de armazenamento necessário.
+   - De acordo com a descrição do dataset, ele possui um tamanho de 7,98 MB. Portanto, estimamos que esse é o espaço necessário para armazenar os dados completos, que incluem as informações detalhadas sobre as 30.000 músicas do Spotify.
 
 4. **Verifique as obrigações legais e obtenha autorização, se necessário**:
    - Confirme o cumprimento de regulamentações de privacidade (ex.: LGPD, GDPR).

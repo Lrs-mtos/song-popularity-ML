@@ -27,16 +27,25 @@ This repository contains a ML project about predicting song popularity on Spotif
    (OBS: Será online ou offline?)
 
 5. **Como o desempenho deve ser medido?**:
-   - Estabeleça métricas claras (ex.: precisão, recall, RMSE, etc.).
+   - Cenário 1 - Classificação:
+      A medida utilizada será a precisão, sendo calculada como a proporção de exemplos realmente positivos dentre todos aqueles que o modelo classificou como positivos. Ou seja, se o modelo afirma que uma certa música vai ser popilar, a precisão irá medir a porcentagem de acertos dentre essas previsões.
+
+   - Cenário 2 - Regressão:
+      A medida utilizada será RMSE (Root Mean Squared Error) que é a raiz quadrada da média dos erros quadráticos. Ela mede a diferença entre os valores previstos pelo modelo e os valores reais, penalizando erros maiores de forma mais intensa do que erros pequenos.   
 
 6. **A medida de desempenho está alinhada com o objetivo do negócio?**:
-   - Valide se as métricas de sucesso técnico são compatíveis com o impacto esperado no negócio.
+   - Cenário 1 - Classificação:
+      No caso em que o objetivo é classificar uma música como popular ou não, a decisão sobre a métrica foca em não disperdiçar recursos com músicas sem potencial - como disse o cliente -, ou seja, os casos onde as falsas classificações de 'popular' (Falsos Positivos) são especialmente prejudiciais. Deve-se então ter a certeza de que, ao afirmar que a música será popular, estejamos o mais correto possível. A precisão é adequada para esses casos.
+   
+   - Cenário 2 - Regressão:
+      No caso em que o objetivo é prever a popularidade da música em uma escala numérica (de 0 a 100, como faz o dataset, por exemplo) não há classes discretas, mas sim um valor contínuo que indica um nível de popularidade. A métrica utilizada penaliza erros maiores de forma mais intensa - o cliente não quer perder dinheiro de nenhuma forma -. Além disso a vizualização dos dados fica mais clara - o cliente quer acompanhar os dados de perto - pois se trata de um modelo que traz o erro para a mesma unidade da variável alvo.
 
 7. **Qual seria o desempenho mínimo necessário para alcançar o objetivo do negócio?**:
-   - Estime o nível de desempenho técnico essencial para justificar o investimento.
+   - Cenário 1: O cliente declara que quer o mínimo de erros possível, disse que sua tolerância seria "de 10 músicas, quero que pelo menos 9 sejam certeiras". Com base nisso, a estimativa ficou de 90% de precisão.
+   - Cenário 2: O cliente declara que nesse caso deseja que a popularidade mínima que o faria investir seria um popularidade de 80 com pouca variação. Nesse caso, foi decidido que o RMSE poderia ser de no máximo 5 pontos. Utilizando o exemplo do cliente, o uso da música pode variar de 75 a 85, por exemplo.
 
 8. **O que são problemas comparáveis?**:
-   - Busque exemplos semelhantes já resolvidos e ferramentas reutilizáveis.
+   - Existem problemas comparáveis sim. Por exemplo, [alguns estúdios de cinema como a 20th Century Fox usam ML para verificar os interesses do público](https://turismomundo.com.br/como-os-estudios-de-cinema-usam-inteligencia-artificial-para-prever-os-interesses-dos-publicos-de-cinema/?utm_source=web-stories-generator).
 
 9. **Tem expertise humana disponível?**:
    - Não, no grupo não existe ninguem que possua conhecimento suficiente referente a musica que possa

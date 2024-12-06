@@ -27,16 +27,25 @@ This repository contains a ML project about predicting song popularity on Spotif
    (OBS: Será online ou offline?)
 
 5. **Como o desempenho deve ser medido?**:
-   - Estabeleça métricas claras (ex.: precisão, recall, RMSE, etc.).
+   - Cenário 1 - Classificação:
+      A medida utilizada será a precisão, sendo calculada como a proporção de exemplos realmente positivos dentre todos aqueles que o modelo classificou como positivos. Ou seja, se o modelo afirma que uma certa música vai ser popilar, a precisão irá medir a porcentagem de acertos dentre essas previsões.
+
+   - Cenário 2 - Regressão:
+      A medida utilizada será RMSE (Root Mean Squared Error) que é a raiz quadrada da média dos erros quadráticos. Ela mede a diferença entre os valores previstos pelo modelo e os valores reais, penalizando erros maiores de forma mais intensa do que erros pequenos.   
 
 6. **A medida de desempenho está alinhada com o objetivo do negócio?**:
-   - Valide se as métricas de sucesso técnico são compatíveis com o impacto esperado no negócio.
+   - Cenário 1 - Classificação:
+      No caso em que o objetivo é classificar uma música como popular ou não, a decisão sobre a métrica foca em não disperdiçar recursos com músicas sem potencial - como disse o cliente -, ou seja, os casos onde as falsas classificações de 'popular' (Falsos Positivos) são especialmente prejudiciais. Deve-se então ter a certeza de que, ao afirmar que a música será popular, estejamos o mais correto possível. A precisão é adequada para esses casos.
+   
+   - Cenário 2 - Regressão:
+      No caso em que o objetivo é prever a popularidade da música em uma escala numérica (de 0 a 100, como faz o dataset, por exemplo) não há classes discretas, mas sim um valor contínuo que indica um nível de popularidade. A métrica utilizada penaliza erros maiores de forma mais intensa - o cliente não quer perder dinheiro de nenhuma forma -. Além disso a vizualização dos dados fica mais clara - o cliente quer acompanhar os dados de perto - pois se trata de um modelo que traz o erro para a mesma unidade da variável alvo.
 
 7. **Qual seria o desempenho mínimo necessário para alcançar o objetivo do negócio?**:
-   - Estime o nível de desempenho técnico essencial para justificar o investimento.
+   - Cenário 1: O cliente declara que quer o mínimo de erros possível, disse que sua tolerância seria "de 10 músicas, quero que pelo menos 9 sejam certeiras". Com base nisso, a estimativa ficou de 90% de precisão.
+   - Cenário 2: O cliente declara que nesse caso deseja que a popularidade mínima que o faria investir seria um popularidade de 80 com pouca variação. Nesse caso, foi decidido que o RMSE poderia ser de no máximo 5 pontos. Utilizando o exemplo do cliente, o uso da música pode variar de 75 a 85, por exemplo.
 
 8. **O que são problemas comparáveis?**:
-   - Busque exemplos semelhantes já resolvidos e ferramentas reutilizáveis.
+   - Existem problemas comparáveis sim. Por exemplo, [alguns estúdios de cinema como a 20th Century Fox usam ML para verificar os interesses do público](https://turismomundo.com.br/como-os-estudios-de-cinema-usam-inteligencia-artificial-para-prever-os-interesses-dos-publicos-de-cinema/?utm_source=web-stories-generator).
 
 9. **Tem expertise humana disponível?**:
    - Não, no grupo não existe ninguem que possua conhecimento suficiente referente a musica que possa
@@ -89,16 +98,26 @@ This repository contains a ML project about predicting song popularity on Spotif
    - De acordo com a descrição do dataset, ele possui um tamanho de 7,98 MB. Portanto, estimamos que esse é o espaço necessário para armazenar os dados completos, que incluem as informações detalhadas sobre as 30.000 músicas do Spotify.
 
 4. **Verifique as obrigações legais e obtenha autorização, se necessário**:
-   - Confirme o cumprimento de regulamentações de privacidade (ex.: LGPD, GDPR).
+   
+   No momento em que os dados são acessados, é possível encontrar um [link](https://opendatacommons.org/licenses/dbcl/1-0/) chamado "License". Nele é possível encontrar um documento detalhado sobre os direitos que você tem sobre o conteúdo do banco de dados, como usar, modificar, distribuir, sublicenciar e vender o conteúdo, e os termos sob os quais você pode usá-lo, incluindo o cumprimento da ODbL e a isenção de responsabilidade do Licenciante.
+
+Em termos simples:
+
+>Você tem ampla liberdade para usar o conteúdo, inclusive para fins comerciais.
+>O Licenciante não garante que os dados estão corretos ou sem erros, e não será responsável por quaisquer danos resultantes do uso dos dados.
+>O Licenciante não reivindica direitos autorais sobre dados factuais (como números ou observações).
+>Portanto, se você estiver usando este conteúdo, deve estar ciente de que pode usar livremente os dados, mas também deve respeitar as condições da ODbL e entender que o Licenciante não se responsabiliza por eventuais problemas.
+
 
 5. **Obtenha permissões de acesso**:
-   - Garanta as autorizações adequadas para acessar os dados.
+
+   De acordo com os dados da licença, não é necessário nenhum tipo de permissão de acesso específica.
 
 6. **Crie um workspace (com espaço de armazenamento suficiente)**:
-   - Prepare o ambiente para análise (ex.: pastas, repositórios, etc.).
+   - Foi preparado o ambiente para análise.
 
 7. **Obtenha os dados**:
-   - Realize o download, coleta ou integração de dados.
+   - Foi realizado o download dos dados na [plataforma Kaggle](https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs?resource=download).
 
 8. **Converta os dados em um formato que você possa manipular com facilidade (sem alterar os próprios dados)**:
    
@@ -112,7 +131,7 @@ This repository contains a ML project about predicting song popularity on Spotif
       from sklearn.compose import ColumnTransformer
       from sklearn.pipeline import Pipeline
    
-      def returnDataFLame(file_path):
+      def returnDataFrame(file_path):
           try:
               df = pd.read_csv(file_path)
               return df

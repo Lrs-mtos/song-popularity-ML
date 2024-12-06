@@ -28,20 +28,21 @@ This repository contains a ML project about predicting song popularity on Spotif
 
 5. **Como o desempenho deve ser medido?**:
    - Cenário 1 - Classificação:
-      A medida utilizada será a precisão, sendo calculada como a proporção de exemplos realmente positivos dentre todos aqueles que o modelo classificou como positivos. Ou seja, se o modelo afirma que uma certa música vai ser popilar, a precisão irá medir a porcentagem de acertos dentre essas previsões.
+      A medida utilizada será a sensibilidade/especificidade, sendo calculada como a proporção de exemplos realmente positivos dentre todos aqueles que o modelo classificou como positivos. Ou seja, se o modelo afirma que uma certa música vai ser popilar, a precisão irá medir a porcentagem de acertos dentre essas previsões.
 
    - Cenário 2 - Regressão:
       A medida utilizada será RMSE (Root Mean Squared Error) que é a raiz quadrada da média dos erros quadráticos. Ela mede a diferença entre os valores previstos pelo modelo e os valores reais, penalizando erros maiores de forma mais intensa do que erros pequenos.   
 
 6. **A medida de desempenho está alinhada com o objetivo do negócio?**:
-   - Cenário 1 - Classificação:
-      No caso em que o objetivo é classificar uma música como popular ou não, a decisão sobre a métrica foca em não disperdiçar recursos com músicas sem potencial - como disse o cliente -, ou seja, os casos onde as falsas classificações de 'popular' (Falsos Positivos) são especialmente prejudiciais. Deve-se então ter a certeza de que, ao afirmar que a música será popular, estejamos o mais correto possível. A precisão é adequada para esses casos.
-   
+   - Cenário 1.0 - Classificação não arriscada:
+      No caso em que o objetivo é classificar uma música como baixa, média, alta ou muito alta popularidade, a decisão sobre a métrica foca em não disperdiçar recursos com músicas sem potencial - como disse o cliente -, ou seja, os casos onde as falsas classificações de 'popular' (Falsos Positivos) são especialmente prejudiciais. Deve-se então ter a certeza de que, ao afirmar que a música será popular, estejamos o mais correto possível. A sensibiliddade é uma boa métrica nesse caso
+   - Cenário 1.1 - Classificação arriscada:
+      No caso em que o objetivo do cliente é arriscar em tendências, a métrica mais adequada seria a especificade.
    - Cenário 2 - Regressão:
       No caso em que o objetivo é prever a popularidade da música em uma escala numérica (de 0 a 100, como faz o dataset, por exemplo) não há classes discretas, mas sim um valor contínuo que indica um nível de popularidade. A métrica utilizada penaliza erros maiores de forma mais intensa - o cliente não quer perder dinheiro de nenhuma forma -. Além disso a vizualização dos dados fica mais clara - o cliente quer acompanhar os dados de perto - pois se trata de um modelo que traz o erro para a mesma unidade da variável alvo.
 
 7. **Qual seria o desempenho mínimo necessário para alcançar o objetivo do negócio?**:
-   - Cenário 1: O cliente declara que quer o mínimo de erros possível, disse que sua tolerância seria "de 10 músicas, quero que pelo menos 9 sejam certeiras". Com base nisso, a estimativa ficou de 90% de precisão.
+   - Cenário 1: O cliente declara que quer o mínimo de erros possível, disse que sua tolerância seria "de 10 músicas, quero que pelo menos 9 sejam certeiras". Com base nisso, a estimativa ficou de 90% de sensibilidade.
    - Cenário 2: O cliente declara que nesse caso deseja que a popularidade mínima que o faria investir seria um popularidade de 80 com pouca variação. Nesse caso, foi decidido que o RMSE poderia ser de no máximo 5 pontos. Utilizando o exemplo do cliente, o uso da música pode variar de 75 a 85, por exemplo.
 
 8. **O que são problemas comparáveis?**:
@@ -140,7 +141,7 @@ Em termos simples:
               return None
       
       # Ler o DataFrame
-      df = returnDataFLame('/kaggle/input/30000-spotify-songs/spotify_songs.csv')
+      df = returnDataFrame('/kaggle/input/30000-spotify-songs/spotify_songs.csv')
       
       # Verificar se o DataFrame foi lido com sucesso
       if df is None or df.empty:

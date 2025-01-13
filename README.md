@@ -288,7 +288,7 @@ Em termos simples:
    - % de valores ausentes: [VERFICAR]
    - Ruído e tipo de ruído: pode ter pequenas imprecisões, mas não possui grandes _outliers_, pois não excede o limite de intervalo
    - Utilidade para a tarefa: é bastante corrrelacionado ao estilo e clima da música; pode influenciar a popularidade.
-   - Tipo de distribuição: apresenta uma distribuição unimodal negativa.
+   - Tipo de distribuição: apresenta uma distribuição unimodal negativa
    ---
    >8. energy
    - Nome: energy
@@ -297,33 +297,95 @@ Em termos simples:
    - % de valores ausentes: [VERFICAR]
    - Ruído e tipo de ruído: pode ter pequenas imprecisões, mas não possui grandes _outliers_, pois não excede o limite de intervalo 
    - Utilidade para a tarefa: bastante correlacionado ao estilo e clima da música
-   - Tipo de distribuição: uma distribuição semelhante à dançabilidade
+   - Tipo de distribuição: apresenta uma distribuição unimodal negativa.
    ---
-   > 
-   - Nome: 
-   - Tipo: 
-   - Intervalo: 
-   - % de valores ausentes: 
-   - Ruído e tipo de ruído: 
-   - Utilidade para a tarefa: 
-   - Tipo de distribuição:
+   > 9. key
+   - Nome: keu
+   - Tipo: Categórico ordinal
+   - Intervalo: _bounded_ (apenas 13 valores possíveis no máximo, incluindo -1)
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: algum erro de detecção
+   - Utilidade para a tarefa: pode ou não ter correlação com a popularidade. Pode ser testada no modelo.
+   - Tipo de distribuição: distribuição discreta
    ---
-   >
-   - Nome: 
-   - Tipo: 
-   - Intervalo: 
-   - % de valores ausentes: 
-   - Ruído e tipo de ruído: 
-   - Utilidade para a tarefa: 
-   - Tipo de distribuição:
+   >10. loudness
+   - Nome: loudness
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ em termos práticos, pois 0dB já é muito alto para a média de uma faixa
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: valores muito discrepantes em faixas extremamente silenciosas ou extremamente altas
+   - Utilidade para a tarefa: em alguns gêneros, loudnes pode correlacionar-se com popularidade (ex.: músicas pop tendem a ser masterizadas com loudness alto)
+   - Tipo de distribuição: apresenta uma distribuição unimodal negativa
    ---
-   >
-   - Nome: 
-   - Tipo: 
-   - Intervalo: 
-   - % de valores ausentes: 
-   - Ruído e tipo de ruído: 
-   - Utilidade para a tarefa: 
-   - Tipo de distribuição:
-   
-
+   >11. mode
+   - Nome: mode
+   - Tipo: categórico binário
+   - Intervalo: _bounded_, apenas 0 ou 1
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: similar ao key
+   - Utilidade para a tarefa: oide ser testado para ver correlação com popularidade
+   - Tipo de distribuição: frequência binária. Normalmente há mais faixas em modo maior (1)
+   ---
+      >12. speechiness
+   - Nome: speechiness
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ [0,1]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: detecção de fala pode não ser perfeita.
+   - Utilidade para a tarefa: diferencia canções mais faladas de músicas cantadas
+   - Tipo de distribuição: apresenta uma distribuição unimodal positiva
+   ---
+      >13. acousticness
+   - Nome: acousticness
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ [0,1]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: pode ter imprecisão de medições
+   - Utilidade para a tarefa: pode ter impacto na popularidade dependendo da moda do mercado
+   - Tipo de distribuição: apresenta uma distribuição unimodal positiva
+   ---
+      >14. insrtumentalness
+   - Nome: insrtumentalness
+   - Tipo: numérico (contínuo) 
+   - Intervalo: _bounded_ [0.0, 1.0]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: algumas faixas podem ter vocais distantes e ainda serem classificadas como instrumentais
+   - Utilidade para a tarefa: saber se a música tem vocal pode impactar popularidade
+   - Tipo de distribuição: apresenta uma distribuição unimodal positiva, muito concentrada em valores próximos de 0
+   ---
+      >15.liveness
+   - Nome: liveness
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ [0,1]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: pode falhar se houver ruído de fundo artificial
+   - Utilidade para a tarefa: músicas ao vivo podem ter popularidade diferente
+   - Tipo de distribuição: bimodal com uma grande concentração positiva
+   ---
+      >16.valence
+   - Nome: valence
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ [0,1]
+   - % de valores ausentes:  [VERIFICAR]
+   - Ruído e tipo de ruído: positividade musical pode ser subjetiva
+   - Utilidade para a tarefa: músicas algres vs. músicas triste podem impactar na popularidade
+   - Tipo de distribuição: curva normal
+   ---
+      >17. duration_ms
+   - Nome: duration_ms
+   - Tipo: numérico (contínuo) em milisegundos
+   - Intervalo: _bounded_
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: podcasts longos 
+   - Utilidade para a tarefa: algumas faixas curtas podem viralizar, ou faixas longas podem ter mais "conceito". Pode correlacionar com a popularidade dependendo de tendências de consumo
+   - Tipo de distribuição: unimodal, levemente assimétrica à direita
+     
+      ---
+      >18. tempo
+   - Nome: tempo
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_, em batidas por minuto, geralmente [0, 250]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: detecnção de BPM pode variar
+   - Utilidade para a tarefa:  ritmos mais acelerados vs. ritmos mais lentos podem influenciar na popularidade
+   - Tipo de distribuição: unimodal, com pico acentuado entre ~110 e 130 BPM

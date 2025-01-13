@@ -216,4 +216,114 @@ Em termos simples:
       X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
       print(f"Tamanho do conjunto de treino: {X_train.shape[0]}")
       print(f"Tamanho do conjunto de teste: {X_test.shape[0]}")
+## Explore os dados
+
+1. Crie uma cópia dos dados para exploração (amostragem até um tamanho gerenciável, se necessário).
+   
+   ```python
+   songs_cp = songs.copy()
+   ```
+
+3. Estude cada atributo e suas propriedades.
+
+   Levando em consideração a imagem a seguir: ![](https://sutel.com.br/curso_r/conceitos_estatisticos_files/figure-html/unnamed-chunk-18-1.png)
+   >1. track_name
+   - Nome: track_name
+   - Tipo: texto (string)
+   - Intervalo: não há intervalos definitos; é limitado em termos de caracteres
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: [NOMES LONGOS OU CARACTERES ESPECIAIS]
+   - Utilidade para a tarefa: para essa atividade, o nome em si não costuma ser um preditor direto, mas pode ser útil para análise de texto ou identificação de duplicadas
+   - Tipo de distribuição: não se aplica.
+   ---
+   >2. track_artist
+   - Nome: track_artist
+   - Tipo: categórico nominal (string com nomes de artistas)
+   - Intervalo: potencialmente muito grande
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: [NOMES LONGOS OU CARACTERES ESPECIAIS]
+   - Utilidade para a tarefa: pode ter correlação com popularidade se determinados artistas forem consistentemente populares.
+   - Tipo de distribuição: não se aplica.
+   ---
+   >3. track_popularity
+   - Nome: track_popularity
+   - Tipo: numérico (contínuo), na prática, um interiro de 0 a 100
+   - Intervalo: Bounded, pois varia somente de 0 a 100 segundo as definições do dataset
+   - % de valores ausentes: 
+   - Ruído e tipo de ruído: podem haver flutuações naturais, pois a popularidade é dinâmica
+   - Utilidade para a tarefa: é a variável-alvo para prever se uma música é popular
+   - Tipo de distribuição: pelo histograma, ela mostra um pico muito forte em 0 e, depois, concetra-se em torno de um intervalo (aproximadamente 30-70), caracterizando uma distribuição **bimodal**
+   ---
+   >4. track_album_name
+   - Nome: track_album_name
+   - Tipo: Texto (string)
+   - Intervalo: Não há intervalos definitos; é limitado em termos de caracteres
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: [NOMES LONGOS OU CARACTERES ESPECIAIS, VERSÕES DELUXE]
+   - Utilidade para a tarefa: não é usada para prever popularidade diretamente. Pode ser útil para agrupar músicas de um mesmo álbum.
+   - Tipo de distribuição: não se aplica
+   ---
+   >5. track_album_release_date
+   - Nome: track_album_release_date
+   - Tipo: Temporal (data). É o único dado temporal do _dataset_
+   - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify, e o superior tende a ser a data atual [VERIFICAR QUANDO A ÚLTIMA MÚSICA APARECEU]
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: 
+   - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal.
+   - Tipo de distribuição: não aplicável.
+   ---
+   > 6. playlist_genre
+   - Nome: playlist_genre
+   - Tipo: categórico nominal
+   - Intervalo: (edm, rap, pop, r&b, latin e rock)
+   - % de valores ausentes: [VERIFICAR]
+   - Ruído e tipo de ruído: pode haver misturas entre gêneros, algumas foram criadas por pessoas
+   - Utilidade para a tarefa: pode ter correlação com a popularidade, já que alguns gêneros podem ter maior engajamento.
+   - Tipo de distribuição:
+   ---
+   >7. danceability
+   - Nome: danceability
+   - Tipo: numérico (contínuo) 
+   - Intervalo: _bounded_ [0,1]
+   - % de valores ausentes: [VERFICAR]
+   - Ruído e tipo de ruído: pode ter pequenas imprecisões, mas não possui grandes _outliers_, pois não excede o limite de intervalo
+   - Utilidade para a tarefa: é bastante corrrelacionado ao estilo e clima da música; pode influenciar a popularidade.
+   - Tipo de distribuição: apresenta uma distribuição unimodal negativa.
+   ---
+   >8. energy
+   - Nome: energy
+   - Tipo: numérico (contínuo)
+   - Intervalo: _bounded_ no intervalo [0.0, 1.0]
+   - % de valores ausentes: [VERFICAR]
+   - Ruído e tipo de ruído: pode ter pequenas imprecisões, mas não possui grandes _outliers_, pois não excede o limite de intervalo 
+   - Utilidade para a tarefa: bastante correlacionado ao estilo e clima da música
+   - Tipo de distribuição: uma distribuição semelhante à dançabilidade
+   ---
+   > 
+   - Nome: 
+   - Tipo: 
+   - Intervalo: 
+   - % de valores ausentes: 
+   - Ruído e tipo de ruído: 
+   - Utilidade para a tarefa: 
+   - Tipo de distribuição:
+   ---
+   >
+   - Nome: 
+   - Tipo: 
+   - Intervalo: 
+   - % de valores ausentes: 
+   - Ruído e tipo de ruído: 
+   - Utilidade para a tarefa: 
+   - Tipo de distribuição:
+   ---
+   >
+   - Nome: 
+   - Tipo: 
+   - Intervalo: 
+   - % de valores ausentes: 
+   - Ruído e tipo de ruído: 
+   - Utilidade para a tarefa: 
+   - Tipo de distribuição:
+   
 

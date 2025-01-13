@@ -170,7 +170,7 @@ Em termos simples:
     | **track_artist**               | Nome do artista                                          | Categórico (nominal)       |
     | **track_popularity**           | Popularidade da música (0 a 100)                         | Numérico (contínuo)        |
     | **track_album_name**           | Nome do álbum                                            | Textual                    |
-    | **track_album_release_date**   | Data de lançamento do álbum                              | Temporal                   |
+    | **track_album_release_**   | Data de lançamento do álbum                              | Temporal                   |
     | **playlist_genre**             | Gênero da playlist                                       | Categórico (nominal)       |
     | **danceability**               | Adequação da música para dançar (0.0 a 1.0)              | Numérico (contínuo)        |
     | **energy**                     | Energia da música (0.0 a 1.0)                            | Numérico (contínuo)        |
@@ -260,17 +260,17 @@ Em termos simples:
    - Intervalo: Não há intervalos definitos; é limitado em termos de caracteres
    - % de valores ausentes: [VERIFICAR]
    - Ruído e tipo de ruído: [NOMES LONGOS OU CARACTERES ESPECIAIS, VERSÕES DELUXE]
-   - Utilidade para a tarefa: não é usada para prever popularidade diretamente. Pode ser útil para agrupar músicas de um mesmo álbum.
+   - Utilidade para a tarefa: não é usada para prever popularidade diretamente. Pode ser útil para agrupar músicas de um mesmo álbum
    - Tipo de distribuição: não se aplica
    ---
-   >5. track_album_release_date
+   >5. track_album_release_
    - Nome: track_album_release_date
    - Tipo: Temporal (data). É o único dado temporal do _dataset_
-   - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify, e o superior tende a ser a data atual [VERIFICAR QUANDO A ÚLTIMA MÚSICA APARECEU]
-   - % de valores ausentes: [VERIFICAR]
-   - Ruído e tipo de ruído: 
-   - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal.
-   - Tipo de distribuição: não aplicável.
+   - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify: música mais recente do dataset -> Data: 2020-01-29 00:00:00 Música menos recente do dataset -> Data: 1957-01-01 00:00:00
+   - % de valores ausentes: ~6,65% (1886 de 28356)
+   - Ruído e tipo de ruído: possíveis inconssistências se a data for informada em formato diferente
+   - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal
+   - Tipo de distribuição: não aplicável
    ---
    > 6. playlist_genre
    - Nome: playlist_genre

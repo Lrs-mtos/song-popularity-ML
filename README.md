@@ -389,3 +389,8 @@ Em termos simples:
    - Ruído e tipo de ruído: detecnção de BPM pode variar
    - Utilidade para a tarefa:  ritmos mais acelerados vs. ritmos mais lentos podem influenciar na popularidade
    - Tipo de distribuição: unimodal, com pico acentuado entre ~110 e 130 BPM
+
+   ---
+   4. **Para tarefas de aprendizado supervisionado, identifique o(s) atributo(s)-alvo.**
+     O atributo alvo desse modelo é _track_popularity_.
+

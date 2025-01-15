@@ -267,7 +267,7 @@ Em termos simples:
    - Nome: track_album_release_date
    - Tipo: Temporal (data). É o único dado temporal do _dataset_
    - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify: música mais recente do dataset -> Data: 2020-01-29 00:00:00 Música menos recente do dataset -> Data: 1957-01-01 00:00:00
-   - % de valores ausentes: ~6,65% (1886 de 28356)
+   - % de valores ausentes: ~6,65% (1886 de 28356) de valores de dia e mês ausentes. 0% de valores de ano ausentes
    - Ruído e tipo de ruído: possíveis inconssistências se a data for informada em formato diferente
    - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal
    - Tipo de distribuição: não aplicável

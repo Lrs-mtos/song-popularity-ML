@@ -221,6 +221,8 @@ Em termos simples:
    ```python
    songs_cp = songs.copy()
    ```
+2. Crie um Jupyter notebook para manter registro de sua exploração de dados.
+   O notebook está presente neste repositório.
 
 3. Estude cada atributo e suas propriedades.
 
@@ -389,6 +391,28 @@ Em termos simples:
    - Tipo de distribuição: unimodal, com pico acentuado entre ~110 e 130 BPM
 
    ---
-   4. **Para tarefas de aprendizado supervisionado, identifique o(s) atributo(s)-alvo.**
+4. **Para tarefas de aprendizado supervisionado, identifique o(s) atributo(s)-alvo.**
      O atributo alvo desse modelo é _track_popularity_.
+   
+5. **Visualize os dados.**
+   Feito a partir de histogramas, matriz de correlação, matriz de dispersão e boxplots.
 
+6. **Estude as correlações entre os atributos.**
+   As correlações foram estudadas atraveś da matriz de correlação.   
+
+7. **Estude como você resolveria o problema manualmente.**
+Para classificar ou estimar a popularidade de uma música sem algoritmos de Machine Learning:
+
+- Analisar faixas populares e tentar ver se a nova faixa se assemelha a elas em termos de ritmo, energia, duração etc.
+- Se o artista é bem conhecido, pode implicar popularidade maior, ou se o gênero está em alta no momento.
+- Músicas que aparecem em rádios podem ter certos padrões (energy/danceability altos).
+- Historicamente, há faixas pop entre ~3–4 minutos e ~100–130 BPM que costumam ser mais bem recebidas.
+
+8. **Identifique as tranformações promissoras que você pode querer aplicar.**
+Modificar duration_ms por ser pouco intuitivo, classificar n artistas de acordo com o seu nível de popularidade.
+
+9. **Identifique dados extras que seriam úteis (confira o Capítulo 2).**
+Não foram identificados dados extras.
+
+10. **Documente o que você aprendeu.**
+Nossa equipe aprendeu a criar meios de interpretar dados para encontrar as melhores formas de implementar um modelo de aprendizado de máquina. Esses meios foram: correlação, matrizes de dispersão, diferentes tipos de gráfico (como histogramas e boxplot). Com isso, aprendemos que nem sempre o que parece é, ou seja, a análise de dados é extremamente importante para a tomada de decisões.

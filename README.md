@@ -1,8 +1,6 @@
-# Song popularity ML model
-This repository contains a ML project about predicting song popularity on Spotify.
+# Modelo de Aprendizado de Máquina para Popularidade de Música
 
-
-# Guia para Abordagem e Análise de Problemas de Dados
+Esse repositório contém um proeto de Aprendizado de Máquina sobre predição de popularidade de música no Spotify.
 
 ## **Etapa 1: Abordar o Problema e Analisar o Panorama Geral**
 
@@ -227,7 +225,7 @@ Em termos simples:
 3. Estude cada atributo e suas propriedades.
 
    Levando em consideração a imagem a seguir: ![](https://sutel.com.br/curso_r/conceitos_estatisticos_files/figure-html/unnamed-chunk-18-1.png)
-   >1. track_name
+   >1.track_name
    - Nome: track_name
    - Tipo: texto (string)
    - Intervalo: não há intervalos definitos; é limitado em termos de caracteres
@@ -236,7 +234,7 @@ Em termos simples:
    - Utilidade para a tarefa: para essa atividade, o nome em si não costuma ser um preditor direto, mas pode ser útil para análise de texto ou identificação de duplicadas
    - Tipo de distribuição: não se aplica.
    ---
-   >2. track_artist
+   >2.track_artist
    - Nome: track_artist
    - Tipo: categórico nominal (string com nomes de artistas)
    - Intervalo: potencialmente muito grande
@@ -245,7 +243,7 @@ Em termos simples:
    - Utilidade para a tarefa: pode ter correlação com popularidade se determinados artistas forem consistentemente populares.
    - Tipo de distribuição: não se aplica.
    ---
-   >3. track_popularity
+   >3.track_popularity
    - Nome: track_popularity
    - Tipo: numérico (contínuo), na prática, um interiro de 0 a 100
    - Intervalo: Bounded, pois varia somente de 0 a 100 segundo as definições do dataset
@@ -254,7 +252,7 @@ Em termos simples:
    - Utilidade para a tarefa: é a variável-alvo para prever se uma música é popular
    - Tipo de distribuição: pelo histograma, ela mostra um pico muito forte em 0 e, depois, concetra-se em torno de um intervalo (aproximadamente 30-70), caracterizando uma distribuição **bimodal**
    ---
-   >4. track_album_name
+   >4.track_album_name
    - Nome: track_album_name
    - Tipo: Texto (string)
    - Intervalo: Não há intervalos definitos; é limitado em termos de caracteres
@@ -263,16 +261,16 @@ Em termos simples:
    - Utilidade para a tarefa: não é usada para prever popularidade diretamente. Pode ser útil para agrupar músicas de um mesmo álbum
    - Tipo de distribuição: não se aplica
    ---
-   >5. track_album_release_
+   >5.track_album_release_date
    - Nome: track_album_release_date
    - Tipo: Temporal (data). É o único dado temporal do _dataset_
-   - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify: música mais recente do dataset -> Data: 2020-01-29 00:00:00 Música menos recente do dataset -> Data: 1957-01-01 00:00:00
+   - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify: música mais recente do dataset -> Data: 2020-01-29 Música menos recente do dataset -> Data: 1957-01-01 
    - % de valores ausentes: ~6,65% (1886 de 28356) de valores de dia e mês ausentes. 0% de valores de ano ausentes
    - Ruído e tipo de ruído: possíveis inconssistências se a data for informada em formato diferente
    - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal
    - Tipo de distribuição: não aplicável
    ---
-   > 6. playlist_genre
+   > 6.playlist_genre
    - Nome: playlist_genre
    - Tipo: categórico nominal
    - Intervalo: (edm, rap, pop, r&b, latin e rock)
@@ -281,7 +279,7 @@ Em termos simples:
    - Utilidade para a tarefa: pode ter correlação com a popularidade, já que alguns gêneros podem ter maior engajamento.
    - Tipo de distribuição:
    ---
-   >7. danceability
+   >7.danceability
    - Nome: danceability
    - Tipo: numérico (contínuo) 
    - Intervalo: _bounded_ [0,1]
@@ -290,7 +288,7 @@ Em termos simples:
    - Utilidade para a tarefa: é bastante corrrelacionado ao estilo e clima da música; pode influenciar a popularidade.
    - Tipo de distribuição: apresenta uma distribuição unimodal negativa
    ---
-   >8. energy
+   >8.energy
    - Nome: energy
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ no intervalo [0.0, 1.0]
@@ -299,8 +297,8 @@ Em termos simples:
    - Utilidade para a tarefa: bastante correlacionado ao estilo e clima da música
    - Tipo de distribuição: apresenta uma distribuição unimodal negativa.
    ---
-   > 9. key
-   - Nome: keu
+   > 9.key
+   - Nome: key
    - Tipo: Categórico ordinal
    - Intervalo: _bounded_ (apenas 13 valores possíveis no máximo, incluindo -1)
    - % de valores ausentes: 0%
@@ -308,25 +306,25 @@ Em termos simples:
    - Utilidade para a tarefa: pode ou não ter correlação com a popularidade. Pode ser testada no modelo.
    - Tipo de distribuição: distribuição discreta
    ---
-   >10. loudness
+   >10.loudness
    - Nome: loudness
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ em termos práticos, pois 0dB já é muito alto para a média de uma faixa
    - % de valores ausentes: 0%
    - Ruído e tipo de ruído: valores muito discrepantes em faixas extremamente silenciosas ou extremamente altas
-   - Utilidade para a tarefa: em alguns gêneros, loudnes pode correlacionar-se com popularidade (ex.: músicas pop tendem a ser masterizadas com loudness alto)
+   - Utilidade para a tarefa: em alguns gêneros, loudness pode correlacionar-se com popularidade (ex.: músicas pop tendem a ser masterizadas com loudness alto)
    - Tipo de distribuição: apresenta uma distribuição unimodal negativa
    ---
-   >11. mode
+   >11.mode
    - Nome: mode
    - Tipo: categórico binário
    - Intervalo: _bounded_, apenas 0 ou 1
    - % de valores ausentes: 0%
    - Ruído e tipo de ruído: similar ao key
-   - Utilidade para a tarefa: oide ser testado para ver correlação com popularidade
+   - Utilidade para a tarefa: pode ser testado para ver correlação com popularidade
    - Tipo de distribuição: frequência binária. Normalmente há mais faixas em modo maior (1)
    ---
-      >12. speechiness
+   >12.speechiness
    - Nome: speechiness
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ [0,1]
@@ -335,7 +333,7 @@ Em termos simples:
    - Utilidade para a tarefa: diferencia canções mais faladas de músicas cantadas
    - Tipo de distribuição: apresenta uma distribuição unimodal positiva
    ---
-      >13. acousticness
+   >13.acousticness
    - Nome: acousticness
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ [0,1]
@@ -344,8 +342,8 @@ Em termos simples:
    - Utilidade para a tarefa: pode ter impacto na popularidade dependendo da moda do mercado
    - Tipo de distribuição: apresenta uma distribuição unimodal positiva
    ---
-      >14. insrtumentalness
-   - Nome: insrtumentalness
+   >14.instrumentalness
+   - Nome: instrumentalness
    - Tipo: numérico (contínuo) 
    - Intervalo: _bounded_ [0.0, 1.0]
    - % de valores ausentes: 0%
@@ -353,7 +351,7 @@ Em termos simples:
    - Utilidade para a tarefa: saber se a música tem vocal pode impactar popularidade
    - Tipo de distribuição: apresenta uma distribuição unimodal positiva, muito concentrada em valores próximos de 0
    ---
-      >15.liveness
+   >15.liveness
    - Nome: liveness
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ [0,1]
@@ -362,31 +360,31 @@ Em termos simples:
    - Utilidade para a tarefa: músicas ao vivo podem ter popularidade diferente
    - Tipo de distribuição: bimodal com uma grande concentração positiva
    ---
-      >16.valence
+   >16.valence
    - Nome: valence
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_ [0,1]
    - % de valores ausentes:  0%
    - Ruído e tipo de ruído: positividade musical pode ser subjetiva
-   - Utilidade para a tarefa: músicas algres vs. músicas triste podem impactar na popularidade
+   - Utilidade para a tarefa: músicas alegres vs. músicas triste podem impactar na popularidade
    - Tipo de distribuição: curva normal
    ---
-      >17. duration_ms
+   >17.duration_ms
    - Nome: duration_ms
    - Tipo: numérico (contínuo) em milisegundos
    - Intervalo: _bounded_
    - % de valores ausentes: 0%
-   - Ruído e tipo de ruído: podcasts longos 
+   - Ruído e tipo de ruído: faixas muito longas e muito curtas
    - Utilidade para a tarefa: algumas faixas curtas podem viralizar, ou faixas longas podem ter mais "conceito". Pode correlacionar com a popularidade dependendo de tendências de consumo
    - Tipo de distribuição: unimodal, levemente assimétrica à direita
      
-      ---
-      >18. tempo
+   ---
+   >18.tempo
    - Nome: tempo
    - Tipo: numérico (contínuo)
    - Intervalo: _bounded_, em batidas por minuto, geralmente [0, 250]
    - % de valores ausentes: 0%
-   - Ruído e tipo de ruído: detecnção de BPM pode variar
+   - Ruído e tipo de ruído: detecção de BPM pode variar
    - Utilidade para a tarefa:  ritmos mais acelerados vs. ritmos mais lentos podem influenciar na popularidade
    - Tipo de distribuição: unimodal, com pico acentuado entre ~110 e 130 BPM
 

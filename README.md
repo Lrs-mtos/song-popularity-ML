@@ -231,7 +231,7 @@ Em termos simples:
    - Nome: track_name
    - Tipo: texto (string)
    - Intervalo: não há intervalos definitos; é limitado em termos de caracteres
-   - % de valores ausentes: 0,01% (4 de 28356)
+      - % de valores ausentes: 0,015% (4 de 26161)
    - Ruído e tipo de ruído: nomes longos ou caracteres especiais
    - Utilidade para a tarefa: para essa atividade, o nome em si não costuma ser um preditor direto, mas pode ser útil para análise de texto ou identificação de duplicadas
    - Tipo de distribuição: não se aplica.
@@ -240,7 +240,7 @@ Em termos simples:
    - Nome: track_artist
    - Tipo: categórico nominal (string com nomes de artistas)
    - Intervalo: potencialmente muito grande
-   - % de valores ausentes: 0,01% (4 de 28356)
+   - % de valores ausentes: 0,015% (4 de 26161)
    - Ruído e tipo de ruído: nomes longos ou caracteres especiais
    - Utilidade para a tarefa: pode ter correlação com popularidade se determinados artistas forem consistentemente populares.
    - Tipo de distribuição: não se aplica.
@@ -258,7 +258,7 @@ Em termos simples:
    - Nome: track_album_name
    - Tipo: Texto (string)
    - Intervalo: Não há intervalos definitos; é limitado em termos de caracteres
-   - % de valores ausentes: 0,01% (4 de 28356)
+   - % de valores ausentes: 0,015% (4 de 26161)
    - Ruído e tipo de ruído: nomes longos, caracteres especiais e versões deluxe
    - Utilidade para a tarefa: não é usada para prever popularidade diretamente. Pode ser útil para agrupar músicas de um mesmo álbum
    - Tipo de distribuição: não se aplica
@@ -267,7 +267,7 @@ Em termos simples:
    - Nome: track_album_release_date
    - Tipo: Temporal (data). É o único dado temporal do _dataset_
    - Intervalo: Data de lançamento do álbum; o limite inferior depende do histórico do Spotify: música mais recente do dataset -> Data: 2020-01-29 Música menos recente do dataset -> Data: 1957-01-01 
-   - % de valores ausentes: ~6,65% (1886 de 28356) de valores de dia e mês ausentes. 0% de valores de ano ausentes
+   - % de valores ausentes: ~7,20% (1886 de 26161) de valores de dia e mês ausentes. 0% de valores de ano ausentes
    - Ruído e tipo de ruído: possíveis inconssistências se a data for informada em formato diferente
    - Utilidade para a tarefa: pode ser usado para análise temporal ou sazonal
    - Tipo de distribuição: não aplicável

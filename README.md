@@ -1,5 +1,5 @@
 # Song popularity ML model
-This repository contains a ML project about predicting song popularity on Spotify.
+This repository contains a ML project about predicting song popularity on MODIFICAÇÃO.
 
 
 # Guia para Abordagem e Análise de Problemas de Dados

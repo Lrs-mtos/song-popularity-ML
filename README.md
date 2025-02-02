@@ -1,10 +1,6 @@
 # Modelo de Aprendizado de Máquina para Popularidade de Música
 
-<<<<<<< HEAD
 Esse repositório contém um proeto de Aprendizado de Máquina sobre predição de popularidade de música no Spotify.
-=======
-Esse repositório contém um projeto de Aprendizado de Máquina sobre predição de popularidade de música no Spotify.
->>>>>>> main
 
 ## **Etapa 1: Abordar o Problema e Analisar o Panorama Geral**
 
